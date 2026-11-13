@@ -200,15 +200,15 @@
         </div>
       </div>
       <nav class="tabs" aria-label="看板页面">
-        <button class="tab active" data-page="overview">总览</button>
+        <button class="tab" data-page="overview">总览</button>
         <button class="tab" data-page="sessions">会话分析</button>
         <button class="tab" data-page="diagnosis">诊断下钻</button>
         <button class="tab" data-page="customers">客户明细</button>
-        <button class="tab" data-page="k1">K1专项</button>
+        <button class="tab active" data-page="k1">K1专项</button>
       </nav>
     </header>
 
-    <main id="overview" class="page active">
+    <main id="overview" class="page">
       <section class="kpi-grid">
         <article class="kpi"><div class="label">已覆盖客户主体数</div><div class="value">0</div><div class="note">目标 0 ｜ 主体渗透 0%</div></article>
         <article class="kpi"><div class="label">客户主体渗透率</div><div class="value">0%</div><div class="note">已覆盖 / 应覆盖</div></article>
@@ -385,9 +385,9 @@
       </section>
     </main>
 
-    <main id="k1" class="page">
-      <div class="k1-switch" aria-label="K1业务模式"><button class="active" data-k1-view="k1-overall">K1总览</button><button data-k1-view="k1-direct">K1直销</button><button data-k1-view="k1-agency">K1代理</button></div>
-      <div id="k1-overall" class="k1-view active"><section class="kpi-grid"><article class="kpi "><div class="value">316</div><div class="label">服务单元（去重 UV）</div><div class="note">群聊与私聊计数单位不同，不等于企业数</div></article><article class="kpi "><div class="value">208</div><div class="label">有效互动单元</div><div class="note">客户侧至少发过1条消息；208/316</div></article><article class="kpi "><div class="value">132</div><div class="label">有效提问单元</div><div class="note">至少1条有效提问；41.8%</div></article><article class="kpi "><div class="value">678</div><div class="label">有效提问轮次</div><div class="note">客户消息 3,667 条；按问题意图识别</div></article><article class="kpi hi"><div class="value">2.37</div><div class="label">每活跃单元日轮次</div><div class="note">678 ÷ 286 个活跃单元日</div></article><article class="kpi "><div class="value">91.9%</div><div class="label">30 分钟内机器人回复</div><div class="note">623/678；中位 38秒</div></article></section><section class="panel"><div class="panel-h"><div><div class="panel-title">0. 管理问题、业务影响与下一步</div>
+    <main id="k1" class="page active">
+      <div class="k1-switch" aria-label="K1业务模式"><button data-k1-view="k1-overall">K1总览</button><button data-k1-view="k1-direct">K1直销</button><button class="active" data-k1-view="k1-agency">K1代理</button></div>
+      <div id="k1-overall" class="k1-view"><section class="kpi-grid"><article class="kpi "><div class="value">316</div><div class="label">服务单元（去重 UV）</div><div class="note">群聊与私聊计数单位不同，不等于企业数</div></article><article class="kpi "><div class="value">208</div><div class="label">有效互动单元</div><div class="note">客户侧至少发过1条消息；208/316</div></article><article class="kpi "><div class="value">132</div><div class="label">有效提问单元</div><div class="note">至少1条有效提问；41.8%</div></article><article class="kpi "><div class="value">678</div><div class="label">有效提问轮次</div><div class="note">客户消息 3,667 条；按问题意图识别</div></article><article class="kpi hi"><div class="value">2.37</div><div class="label">每活跃单元日轮次</div><div class="note">678 ÷ 286 个活跃单元日</div></article><article class="kpi "><div class="value">91.9%</div><div class="label">30 分钟内机器人回复</div><div class="note">623/678；中位 38秒</div></article></section><section class="panel"><div class="panel-h"><div><div class="panel-title">0. 管理问题、业务影响与下一步</div>
     <div class="panel-sub">先判断经营问题，再看消息量；按潜在客户损失排序</div></div></div>
     <div class="panel-b"><div class="k1-findings"><div class="k1-finding"><span class="risk-tag">P0</span><div><h4>B-01 名册规模未转成服务能力</h4><p><b>证据：</b>164 行名册、141 个独有群，但本期发送 0 条；拉群覆盖被高估。</p><p class="todo-line"><b>Todo：</b>抽查20个独有群的入群、发言权限、路由与任务配置；24小时内决定迁移或下线。</p></div></div><div class="k1-finding"><span class="risk-tag">P0</span><div><h4>私聊成为漏接黑洞</h4><p><b>证据：</b>群聊24h机器人回复474/478，私聊仅156/200。</p><p class="todo-line"><b>Todo：</b>建立5分钟未回复告警，连续3问自动升级人工。</p></div></div><div class="k1-finding"><span class="risk-tag">P0</span><div><h4>高潜 QYT/VP 没有差异化服务</h4><p><b>证据：</b>24个高潜群发生72问，其中9问无人承接。</p><p class="todo-line"><b>Todo：</b>执行5分钟首响、30分钟人工兜底、当日闭环，并按群输出风险owner。</p></div></div><div class="k1-finding"><span class="risk-tag">P0</span><div><h4>K1代理主名单与机器人名册口径混用</h4><p><b>证据：</b>剔除销售/测试群后，企微主名单为34个账户行、10个去重群；机器人名册仍有102群。</p><p class="todo-line"><b>Todo：</b>K1覆盖只认企微主名单，主名单外群单列核验。</p></div></div><div class="k1-finding"><span class="warn-tag">P1</span><div><h4>使用量被少数深聊客户拉高</h4><p><b>证据：</b>Top5服务单元贡献161/678=23.7%，总问题量增长不代表普遍激活。</p><p class="todo-line"><b>Todo：</b>周报同时看提问单元率、Top5集中度、零提问群激活率。</p></div></div><div class="k1-finding"><span class="warn-tag">P1</span><div><h4>代理主数据仍无法覆盖全部活跃范围</h4><p><b>证据：</b>93个机器人名册群未被当前K1主名单覆盖，其中0群无法识别服务商；15个代理私聊无法映射。</p><p class="todo-line"><b>Todo：</b>补齐稳定群标识和客户ID映射，核验后再进入代理绩效。</p></div></div><div class="k1-finding"><span class="warn-tag">P1</span><div><h4>分类兜底项仍需治理</h4><p><b>证据：</b>总体仍有“其他明确业务问题”164/678=24.2%；代理Top12已直接下拆。</p><p class="todo-line"><b>Todo：</b>继续对直销兜底项做二次分类。</p></div></div><div class="k1-finding"><span class="warn-tag">P1</span><div><h4>已确认直销客户仍走代理机器人</h4><p><b>证据：</b>人工确认26个直销群，本期6个群产生31问，目前由腾讯投放助手（草宽随时服务）承接。</p><p class="todo-line"><b>Todo：</b>改路由到直销机器人，或明确该账号承接直销的负责人和SLA。</p></div></div></div></div></section><section class="panel"><div class="panel-h"><div><div class="panel-title">1. 服务单元与企微账号覆盖（去重 UV）</div>
     <div class="panel-sub">机器人账号覆盖 = 该账号在窗口内发过消息的去重服务单元；账号UV有交叉，不可相加为企业数</div></div></div>
@@ -553,7 +553,7 @@
     <tr><td>有效提问</td><td>618</td></tr><tr><td>观察不足问题</td><td>143</td></tr>
     </tbody></table></div><div class="notice" style="margin:0"><b>正式指标状态：</b>K1直销结束日问题同样缺少后续24小时观察数据；当前只发布回复覆盖、响应速度、协作和成熟样本排查，不把待观察算成未解决。</div></div>
     </div></section></div>
-      <div id="k1-agency" class="k1-view"><section class="kpi-grid cols-4">
+      <div id="k1-agency" class="k1-view active"><section class="kpi-grid cols-4">
     <article class="kpi tone-blue"><div class="value">93</div><div class="label">人工拉群名单</div><div class="note">晨曦 36 群 + 新广 57 群；卓尔 2 群已并入新广</div></article>
     <article class="kpi tone-red"><div class="value">2.19</div><div class="label">每活跃群日输出</div><div class="note">664 条 ÷ 303 个机器人活跃群日</div></article>
     <article class="kpi tone-red"><div class="value">1.21</div><div class="label">每活跃群日轮次</div><div class="note">40 轮 ÷ 33 个活跃群日</div></article>
